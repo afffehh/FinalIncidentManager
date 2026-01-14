@@ -1,0 +1,12 @@
+{
+  "name": "incident-portal-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd react && npm run dev",
+    "build": "cd react && npm run build",
+    "lint": "cd react && npm run lint",
+    "preview": "cd react && npm run preview",
+    "install": "cd react && npm install"
+  }
+}

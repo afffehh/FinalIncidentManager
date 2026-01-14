@@ -8,8 +8,4 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="react\src\api\" />
-    <Folder Include="react\src\pages\" />
-  </ItemGroup>
 </Project>
