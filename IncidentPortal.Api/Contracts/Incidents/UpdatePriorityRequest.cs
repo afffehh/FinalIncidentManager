@@ -1,6 +1,8 @@
-﻿namespace IncidentPortal.Api.Contracts.Incidents
+﻿using IncidentPortal.Domain.Enums;
+
+namespace IncidentPortal.Api.Contracts.Incidents;
+
+public class UpdatePriorityRequest
 {
-    public class CreateIncidentRequest
-    {
-    }
+    public IncidentPriority Priority { get; set; }
 }
