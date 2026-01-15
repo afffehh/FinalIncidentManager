@@ -1,6 +1,8 @@
-﻿namespace IncidentPortal.Api.Contracts.Incidents
+﻿using IncidentPortal.Domain.Enums;
+
+namespace IncidentPortal.Api.Contracts.Incidents;
+
+public class UpdateStatusRequest
 {
-    public class CreateIncidentRequest
-    {
-    }
+    public IncidentStatus Status { get; set; }
 }
