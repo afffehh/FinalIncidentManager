@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace IncidentPortal.Domain.Enums;
 
-namespace IncidentPortal.Domain.Enums
+public enum IncidentPriority
 {
-    internal class IncidentPriority
-    {
-    }
+    Low = 0,
+    Medium = 1,
+    High = 2,
+    Critical = 3
 }
