@@ -1,4 +1,4 @@
-﻿using IncidentPortal.Api.Contracts.Incidents;
+using IncidentPortal.Api.Contracts.Incidents;
 using IncidentPortal.Api.Storage;
 using IncidentPortal.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +12,16 @@ public class IncidentsController : ControllerBase
     [HttpGet]
     public ActionResult<List<IncidentResponse>> GetAll()
     {
-        var incidents = InMemoryIncidentStore.GetAll();
-
-        var response = incidents.Select(ToResponse).ToList();
-        return Ok(response);
+        try
+        {
+            var incidents = InMemoryIncidentStore.GetAll();
+            var response = incidents.Select(ToResponse).ToList();
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "An error occurred while retrieving incidents.", error = ex.Message });
+        }
     }
 
     [HttpGet("{id:guid}")]
