@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getIncidents } from "../api/incidentsApi";
 
-export default function IncidentList({ onCreateClick, refreshKey }) {
+export default function IncidentList({ onCreateClick, onSelectIncident, refreshKey }) {
     const [incidents, setIncidents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -49,7 +49,11 @@ export default function IncidentList({ onCreateClick, refreshKey }) {
                         </thead>
                         <tbody>
                             {incidents.map((i) => (
-                                <tr key={i.id}>
+                                <tr
+                                    key={i.id}
+                                    onClick={() => onSelectIncident(i.id)}
+                                    style={{ cursor: "pointer" }}
+                                >
                                     <td>{i.title}</td>
                                     <td>{i.status}</td>
                                     <td>{i.priority}</td>
